@@ -1,0 +1,35 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "org.sonarqube"
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation group: 'org.apache.commons', name: 'commons-text', version: "${apacheCommonTextVersion}"
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonAnnotationsVersion}"
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
+    annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "${lombokVersion}"
+    implementation group: 'mysql', name: 'mysql-connector-java', version: "${mysqlConnectorJavaVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: "${junitJupiterApiVersion}"
+    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: "${junitJupiterEngineVersion}"
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: "${mockitoCoreVersion}"
+    testImplementation group: 'com.h2database', name: 'h2', version: "${h2Version}"
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+
+}
+

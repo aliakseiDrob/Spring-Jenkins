@@ -1,0 +1,26 @@
+package com.epam.esm.exception;
+
+public enum ErrorCode {
+    CERTIFICATE_NOT_FOUND_ERROR(40401),
+    TAG_NOT_FOUND_ERROR(40402),
+    USER_NOT_FOUND_ERROR(40403),
+    PAGE_NOT_EXISTS_ERROR(40405),
+    MOST_USED_TAF_NOT_FOUND_ERROR(40406),
+    ORDER_NOT_FOUND_ERROR(40404),
+    TAG_EMPTY_NAME_OR_LENGTH_ERROR(40001),
+    CERTIFICATE_EMPTY_NAME_OR_LENGTH_ERROR(40002),
+    CERTIFICATE_EMPTY_DESCRIPTION_OR_LENGTH_DESCRIPTION_ERROR(40003),
+    CERTIFICATE_PRICE_ERROR(40004),
+    CERTIFICATE_DURATION_ERROR(40005),
+    TAG_EXISTS_ERROR(40009),
+    USER_EXISTS_ERROR(40012);
+    private final int code;
+
+    ErrorCode(int code) {
+        this.code = code;
+    }
+
+    public int getCode() {
+        return code;
+    }
+}
