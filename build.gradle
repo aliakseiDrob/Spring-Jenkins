@@ -12,8 +12,6 @@ sonarqube {
 }
 
 group = 'com.epam.esm'
-version '1.0.0'
-
 
 allprojects {
     group 'com.epam.esm'
