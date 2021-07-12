@@ -12,6 +12,7 @@ repositories {
 }
 war {
     enabled = true
+    archiveFileName = 'web.war'
 }
 
 dependencies {

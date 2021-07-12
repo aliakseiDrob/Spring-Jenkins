@@ -1,6 +1,9 @@
 plugins {
     id "org.sonarqube" version "3.0"
     id 'com.carepay.sonar-qualitygate' version "0.0.6"
+    id 'java'
+    id 'war'
+    id 'jacoco'
 }
 
 sonarqube {
@@ -12,7 +15,20 @@ sonarqube {
 }
 
 
-allprojects {
-    group 'com.epam.esm'
-    version = '1.0.1'
+group = 'com.epam.esm'
+version '1.0.0'
+
+subprojects {
+
+    plugins.withType(JavaPlugin) {
+        project.sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+
+    tasks.withType(Test) {
+        systemProperty "file.encoding", "UTF-8"
+    }
 }
