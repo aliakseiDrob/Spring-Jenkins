@@ -41,7 +41,3 @@ dependencies {
     testImplementation group: 'org.mockito',name: 'mockito-core',version: "${mockitoCoreVersion}"
     testImplementation group: 'org.mockito',name: 'mockito-junit-jupiter',version: "${mockitoJunitJupiter}"
 }
-test {
-    useJUnitPlatform()
-    systemProperty 'spring.profiles.active', 'default'
-}
